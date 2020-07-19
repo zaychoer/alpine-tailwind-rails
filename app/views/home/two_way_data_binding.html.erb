@@ -1,4 +1,13 @@
-<div class="p-10 max-w-lg mx-auto">
+<div class="my-2">
+  <%=
+    link_to 'Back Home',
+    home_path,
+    class:"transition duration-500 px-4 py-2 font-bold border text-sm rounded-lg focus:outline-none hover:bg-blue-900 hover:text-white hover:border-blue-900"
+  %>
+</div>
+<h1 class="text-2xl font-bold text-gray-800">Two Way Data Binding</h1>
+
+<div class="max-w-lg p-10 mx-auto">
   <form
     x-data="{
       form: {
@@ -22,7 +31,7 @@
     <div class="mb-6">
       <label
         for="name"
-        class="block mb-2 uppercase font-bold text-xs text-gray-700"
+        class="block mb-2 text-xs font-bold text-gray-700 uppercase"
       >
         Name
       </label>
@@ -33,13 +42,13 @@
         id="name"
         x-model="form.name"
         required
-        class="border border-gray-400 p-2 w-full rounded"
+        class="w-full p-2 border border-gray-400 rounded"
       >
     </div>
 
     <template x-if="user">
       <div
-        class="text-sm font-bold my-4"
+        class="my-4 text-sm font-bold"
         x-text="'The user ' + user.name + ' was created at ' + user.createdAt"
       ></div>
     </template>

@@ -1,53 +1,73 @@
+<div class="my-2">
+  <%=
+    link_to 'Back Home',
+    home_path,
+    class:"transition duration-500 px-4 py-2 font-bold border text-sm rounded-lg focus:outline-none hover:bg-blue-900 hover:text-white hover:border-blue-900"
+  %>
+</div>
+<h1 class="text-2xl font-bold text-gray-800">Data Binding and Toogle Visibility</h1>
+
+<%# Data Binding %>
 <div
-  x-data="{ currentTab: 'first', show: false, first_num: 0, second_num: 0 }"
+  x-data="{ first_num: 0, second_num: 0 }"
   class="p-6"
 >
-
-  <%# Data Binding %>
   <input
     type="text"
-    class="text-center border p-2 rounded-lg"
+    class="p-2 text-center border rounded-lg"
     x-model.number="first_num"
   > +
   <input
     type="text"
-    class="text-center border p-2 rounded-lg"
+    class="p-2 text-center border rounded-lg"
     x-model.number="second_num"
   > =
   <output x-text="first_num + second_num"></output>
+</div>
 
-  <%# Toogle Visibility Using State %>
+<%# Toogle Visibility Using State %>
+
+<div
+  x-data="{ show: false }"
+  class="p-6"
+>
   <div class="my-6">
     <h1 x-show="show" class="text-2xl font-bold">Hello World</h1>
     <button
       @click="show = ! show"
-      class="p-2 border rounded-lg text-xs"
+      class="p-2 text-xs border rounded-lg"
       x-text="show ? 'Hide' : 'Show'"
     >
     </button>
   </div>
+</div>
 
+
+<div
+  x-data="{ currentTab: 'first' }"
+  class="p-6"
+>
   <div class="my-6">
     <button
       @click="currentTab = 'first'"
       :class="{ 'text-blue-500' : currentTab === 'first'}"
-      class="p-2 border rounded-lg text-sm"
+      class="p-2 text-sm border rounded-lg"
     >First
     </button>
     <button
       @click="currentTab = 'second'"
       :class="{ 'text-blue-500' : currentTab === 'second'}"
-      class="p-2 border rounded-lg mx-2 text-sm"
+      class="p-2 mx-2 text-sm border rounded-lg"
     >Second
     </button>
     <button
       @click="currentTab = 'third'"
       :class="{ 'text-blue-500' : currentTab === 'third'}"
-      class="p-2 border rounded-lg text-sm"
+      class="p-2 text-sm border rounded-lg"
     >Third
     </button>
   </div>
-  <div class="my-6 border-2 border-dotted p-2">
+  <div class="p-2 my-6 border-2 border-dotted">
     <div x-show="currentTab === 'first'">
       <p class="text-sm font-bold text-color-gray-700">First tab.</p>
     </div>

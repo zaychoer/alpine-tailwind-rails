@@ -1,3 +1,12 @@
+<div class="my-2">
+  <%=
+    link_to 'Back Home',
+    home_path,
+    class:"transition duration-500 px-4 py-2 font-bold border text-sm rounded-lg focus:outline-none hover:bg-blue-900 hover:text-white hover:border-blue-900"
+  %>
+</div>
+<h1 class="text-2xl font-bold text-gray-800">Transitions 102</h1>
+
 <div class="grid items-center justify-center h-screen">
   <div x-data="{ show: false }" @click.away="show = false">
     <button @click="show = ! show" class="focus:outline-none">Links</button>
