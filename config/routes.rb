@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '/extract-component-logic',
     to: 'home#extract_component_logic',
     as: 'extract_component_logic'
+
+  get '/transitions',
+    to: 'home#transitions',
+    as: 'transitions'
 end
