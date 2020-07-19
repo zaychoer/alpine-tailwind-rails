@@ -11,6 +11,15 @@
   </head>
 
   <body class="text-white bg-gray-900">
+    <header class="border-b border-gray-800">
+      <nav class="container flex items-center justify-between px-4 py-6 mx-auto">
+        <div class="flex items-center">
+          <a href=dashboard>
+            <%= image_tag 'laracasts-logo.svg', alt: 'laracasts', class:'w-32 flex-none' %>
+          </a>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
