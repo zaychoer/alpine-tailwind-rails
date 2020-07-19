@@ -4,4 +4,5 @@ class HomeController < ApplicationController
   def two_way_data_binding; end
   def extract_component_logic; end
   def transitions; end
+  def transitions_102; end
 end

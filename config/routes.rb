@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   get '/transitions',
     to: 'home#transitions',
     as: 'transitions'
+
+  get '/transitions-102',
+    to: 'home#transitions_102',
+    as: 'transitions_102'
 end
