@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index', as: 'home'
 
+  get '/dashboard', to: 'dashboard#index', as: 'dashboard'
+
   get '/data-binding-and-toggle-visibility',
     to: 'home#data_binding_and_toggle_visibility',
     as: 'data_binding_and_toggle_visibility'
