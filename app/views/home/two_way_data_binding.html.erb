@@ -1,0 +1,47 @@
+<div class="p-10 max-w-lg mx-auto">
+  <form
+    x-data="{
+      form: {
+        name: ''
+      },
+
+      user: null,
+
+      submit() {
+        fetch('https://reqres.in/api/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(this.form)
+        })
+        .then(response => response.json())
+        .then(user => this.user = user)
+      }
+    }"
+    @submit.prevent="submit"
+  >
+    <div class="mb-6">
+      <label
+        for="name"
+        class="block mb-2 uppercase font-bold text-xs text-gray-700"
+      >
+        Name
+      </label>
+
+      <input
+        type="text"
+        name="name"
+        id="name"
+        x-model="form.name"
+        required
+        class="border border-gray-400 p-2 w-full rounded"
+      >
+    </div>
+
+    <template x-if="user">
+      <div
+        class="text-sm font-bold my-4"
+        x-text="'The user ' + user.name + ' was created at ' + user.createdAt"
+      ></div>
+    </template>
+  </form>
+</div>

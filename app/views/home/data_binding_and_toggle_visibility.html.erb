@@ -1,0 +1,63 @@
+<div
+  x-data="{ currentTab: 'first', show: false, first_num: 0, second_num: 0 }"
+  class="p-6"
+>
+
+  <%# Data Binding %>
+  <input
+    type="text"
+    class="text-center border p-2 rounded-lg"
+    x-model.number="first_num"
+  > +
+  <input
+    type="text"
+    class="text-center border p-2 rounded-lg"
+    x-model.number="second_num"
+  > =
+  <output x-text="first_num + second_num"></output>
+
+  <%# Toogle Visibility Using State %>
+  <div class="my-6">
+    <h1 x-show="show" class="text-2xl font-bold">Hello World</h1>
+    <button
+      @click="show = ! show"
+      class="p-2 border rounded-lg text-xs"
+      x-text="show ? 'Hide' : 'Show'"
+    >
+    </button>
+  </div>
+
+  <div class="my-6">
+    <button
+      @click="currentTab = 'first'"
+      :class="{ 'text-blue-500' : currentTab === 'first'}"
+      class="p-2 border rounded-lg text-sm"
+    >First
+    </button>
+    <button
+      @click="currentTab = 'second'"
+      :class="{ 'text-blue-500' : currentTab === 'second'}"
+      class="p-2 border rounded-lg mx-2 text-sm"
+    >Second
+    </button>
+    <button
+      @click="currentTab = 'third'"
+      :class="{ 'text-blue-500' : currentTab === 'third'}"
+      class="p-2 border rounded-lg text-sm"
+    >Third
+    </button>
+  </div>
+  <div class="my-6 border-2 border-dotted p-2">
+    <div x-show="currentTab === 'first'">
+      <p class="text-sm font-bold text-color-gray-700">First tab.</p>
+    </div>
+
+    <div x-show="currentTab === 'second'">
+      <p class="text-sm font-bold text-color-gray-700">Second tab.</p>
+    </div>
+
+    <div x-show="currentTab === 'third'">
+      <p class="text-sm font-bold text-color-gray-700">Third tab.</p>
+    </div>
+  </div>
+</div>
