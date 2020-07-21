@@ -1,16 +1,16 @@
 <header class="border-b border-gray-800">
-  <nav class="container flex items-center justify-between px-4 py-6 mx-auto">
-    <div class="flex items-center">
+  <nav class="container flex flex-col items-center justify-between px-4 py-6 mx-auto lg:flex-row">
+    <div class="flex flex-col items-center lg:flex-row">
       <%= link_to dashboard_path do %>
         <%= image_tag 'laracasts-logo.svg', alt: 'laracasts', class:'w-32 flex-none' %>
       <% end %>
-      <ul class="flex ml-16 space-x-8">
+      <ul class="flex mt-6 ml-0 space-x-8 lg:ml-16 lg:mt-0">
         <li><%= link_to 'Games', dashboard_path, class:'hover:text-gray-400' %></li>
         <li><%= link_to 'Reviews', dashboard_path, class:'hover:text-gray-400' %></li>
         <li><%= link_to 'Coming Soon', dashboard_path, class:'hover:text-gray-400' %></li>
       </ul>
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center mt-6 lg:mt-0">
       <div class="relative">
         <input type="text" class="w-64 px-3 py-1 pl-8 text-sm bg-gray-800 rounded-full focus:shadow-outline focus:outline-none" placeholder="Search...">
         <div class="absolute top-0 flex items-center h-full ml-2">
